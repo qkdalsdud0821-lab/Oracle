@@ -1,6 +1,6 @@
-SELECT TO_CHAR(hire_date, 'YYYY') AS hire_year,
+﻿SELECT TO_CHAR(hire_date, 'YYYY') AS hire_year,
        COUNT(*)
-  FROM employeesS
+  FROM employees
 GROUP BY TO_CHAR(hire_date, 'YYYY')
 ORDER BY TO_CHAR(hire_date, 'YYYY');
 
@@ -20,16 +20,16 @@ SELECT period, '', SUM(loan_jan_amt) totl_jan
  WHERE period LIKE '2013%'
  GROUP BY period;
 
-SELECT period, SUM(loan_jan_amt) 주택담보대출액, 0 기타대출액
+SELECT period, SUM(loan_jan_amt) 二쇳깮?대낫?異쒖븸, 0 湲고??異쒖븸
   FROM kor_loan_status
  WHERE period = '201311'
-   AND gubun = '주택담보대출'
+   AND gubun = '二쇳깮?대낫?異?
  GROUP BY period, gubun
  UNION ALL
-SELECT period, 0 주택담보대출액, SUM(loan_jan_amt) 기타대출액
+SELECT period, 0 二쇳깮?대낫?異쒖븸, SUM(loan_jan_amt) 湲고??異쒖븸
   FROM kor_loan_status
  WHERE period = '201311'
-   AND gubun = '기타대출'
+   AND gubun = '湲고??異?
  GROUP BY period, gubun ;
 
 SELECT REGION,
